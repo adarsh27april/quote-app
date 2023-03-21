@@ -1,0 +1,49 @@
+<%- include("partials/head.ejs") %>
+
+   <% if(isAuth){ %>
+      <%- include("partials/navbar.ejs") %>
+         <% } %>
+
+            <div class="page_container">
+               <div class="row">
+
+                  <% if(allQuotes.length<1){ %>
+                     <div class="mt-5 textcenter">No Quotes to Show</div>
+                     <% }else{ %>
+                        <% allQuotes.forEach(item=> { %>
+                           <div style="background-color: #<%=item.bgColor%>;"
+                              class="col-md-6 col-lg-4 col-xl-3 col-xxl-2 quote_content p-0">
+                              <p
+                                 class="p-2 m-0 d-flex align-items-center justify-content-center text-center lh-base quote_text">
+                                 <%= item.quote%>
+                              </p>
+
+                              <div class=" quote-card_bottom d-flex justify-content-between px-2">
+                                 <div class="quote-date">
+                                    <i class="fa-regular fa-clock"></i>
+                                    <span class="time_publish">
+                                       <%= new Date(item.createdAt).toLocaleDateString() %>
+                                    </span>
+                                 </div>
+
+                                 <div class="quote-likes d-flex">
+                                    <form action="/quotes/like" method="post">
+                                       <button typle="submit" name="likesBtn" value="<%= item._id%>"
+                                          class="bg-transparent border-0 text-white">
+                                          <i class=" fa-regular fa-heart"></i>
+                                       </button>
+                                    </form>
+                                    <span>
+                                       <%= item.likes %>
+                                    </span>
+                                 </div>
+
+                              </div>
+                           </div>
+                           <% }); %>
+                              <% }; %>
+
+               </div>
+            </div>
+
+            <%- include("partials/footer.ejs") %>

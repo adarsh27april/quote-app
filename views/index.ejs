@@ -1,0 +1,25 @@
+<%- include("partials/head.ejs") %>
+
+   <%- include("partials/navbar.ejs") %>
+
+
+      <!-- home -->
+      <p>Welcome in Home Page</p>
+      <div class="container-fluid position-absolute top-50 start-50 translate-middle text-center">
+         <div class=" home-msg">
+            <div class="mb-3 quotes-home-icon">
+               <i class="fa-solid fa-quote-left"></i>
+               <sub class="fw-bold">Quotes</sub>
+               <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <p>Share what is in your mind now!</p>
+         </div>
+
+         <div class="register-login mt-5">
+            <a class="btn btn-lg btn-light register_btn" type="button" href="/register">register</a>
+            <a class="btn btn-lg btn-dark purple_btn ms-5" type="button" href="/login">login</a>
+         </div>
+      </div>
+
+      <%- include("partials/footer.ejs") %>

@@ -1,0 +1,31 @@
+<%- include("partials/head.ejs") %>
+
+   <%- include("partials/navbar.ejs") %>
+
+
+      <div class="col-md-8 mx-auto mt-5">
+         <form action="/auth/login" method="post" class="">
+            <h3 class="mb-4">Login</h3>
+            <div class="mb-3">
+               <label for="register-email" class="form-label">Email address</label>
+               <input type="email" name="username" class="form-control" id="login-email" aria-describedby="emailHelp">
+
+               <div id="emailHelp" class="form-text">
+                  We'll never share your email with anyone
+               </div>
+
+               <div class="mb-3">
+                  <label for="register-password" class="form-label">Password</label>
+                  <input type="password" name="password" class="form-control" id="login-password" required
+                     minlength="6">
+
+                  <div id=" emailHelp" class="form-text">
+                     Password must be at least 6 characters long
+                  </div>
+                  <button type="submit" class="btn purple_btn">Submit</button>
+         </form>
+         I
+      </div>
+
+
+      <%- include("partials/footer.ejs") %>
